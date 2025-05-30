@@ -43,12 +43,12 @@ body::before {
 }
 
 .slide {
-    width: 90%;
-    max-width: 1200px;
-    height: 90vh;
-    max-height: 700px;
+    width: 98%;
+    max-width: none;
+    height: 96vh;
+    max-height: none;
     display: none;
-    padding: 60px;
+    padding: 40px;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 100px rgba(138, 43, 226, 0.1);
@@ -99,7 +99,7 @@ body::before {
 }
 
 h1 {
-    font-size: 3.5em;
+    font-size: 4.5em;
     font-weight: 700;
     margin-bottom: 30px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -110,21 +110,21 @@ h1 {
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 3.2em;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: #ffffff;
 }
 
 h3 {
-    font-size: 1.8em;
+    font-size: 2.2em;
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: #e94560;
 }
 
 p {
-    font-size: 1.3em;
+    font-size: 1.6em;
     line-height: 1.8;
     margin-bottom: 20px;
     color: #e0e0e0;
@@ -136,7 +136,7 @@ ul {
 }
 
 li {
-    font-size: 1.2em;
+    font-size: 1.5em;
     line-height: 2;
     padding-left: 30px;
     position: relative;
@@ -202,7 +202,7 @@ table {
     border-collapse: collapse;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    font-size: 1.2em;
+    font-size: 1.6em;
 }
 
 th {
@@ -210,14 +210,14 @@ th {
     color: white;
     padding: 25px;
     text-align: left;
-    font-size: 1.3em;
+    font-size: 1.8em;
     font-weight: 600;
 }
 
 td {
     padding: 22px 25px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 1.1em;
+    font-size: 1.4em;
 }
 
 tr {
@@ -340,7 +340,7 @@ button:hover {
 }
 
 .cover-slide h1 {
-    font-size: 5em;
+    font-size: 6em;
     margin-bottom: 20px;
     animation: glow-text 2s ease-in-out infinite;
     position: relative;
@@ -377,10 +377,12 @@ button:hover {
 }
 
 .highlight {
-    background: linear-gradient(135deg, #e94560 0%, #0f3460 100%);
+    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
+    text-shadow: 0 0 20px rgba(255, 107, 107, 0.8);
+    filter: drop-shadow(0 0 8px rgba(255, 107, 107, 0.6));
 }
 
 .timeline {

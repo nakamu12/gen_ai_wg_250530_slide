@@ -75,33 +75,308 @@
         <!-- Slide 3: Definition -->
         <div class="slide" id="s03_genai_definition">
             <h2>生成AIとは</h2>
-            <div class="genai-diagram">
-                <div class="diagram-section">
-                    <h3 style="color: #667eea;">入力</h3>
-                    <p style="font-size: 1.2em;">テキスト・画像・音声</p>
-                    <div style="font-size: 3em; margin: 20px 0;">📝</div>
+            <div class="genai-diagram" style="margin: 60px 0;">
+                <div class="diagram-section" style="position: relative;">
+                    <h3 style="color: #667eea; margin-bottom: 20px;">入力</h3>
+                    <p style="font-size: 1.4em; margin-bottom: 30px;">テキスト・画像・音声</p>
+                    <!-- Input SVG Icon -->
+                    <div style="display: flex; justify-content: center; margin: 30px 0;">
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                            <defs>
+                                <linearGradient id="inputGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                </linearGradient>
+                                <filter id="inputGlow">
+                                    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            <!-- Document stack -->
+                            <rect x="20" y="30" width="50" height="60" rx="4" fill="url(#inputGradient)" opacity="0.8" filter="url(#inputGlow)"/>
+                            <rect x="25" y="25" width="50" height="60" rx="4" fill="url(#inputGradient)" opacity="0.9" filter="url(#inputGlow)"/>
+                            <rect x="30" y="20" width="50" height="60" rx="4" fill="url(#inputGradient)" filter="url(#inputGlow)"/>
+                            <!-- Sound waves -->
+                            <path d="M85 40 Q90 30 95 40 Q100 50 105 40" stroke="url(#inputGradient)" stroke-width="3" fill="none" opacity="0.8">
+                                <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M85 50 Q92 35 99 50 Q106 65 113 50" stroke="url(#inputGradient)" stroke-width="2" fill="none" opacity="0.6">
+                                <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.5s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M85 60 Q94 40 103 60 Q112 80 121 60" stroke="url(#inputGradient)" stroke-width="2" fill="none" opacity="0.7">
+                                <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3s" repeatCount="indefinite"/>
+                            </path>
+                        </svg>
+                    </div>
                 </div>
-                <div class="diagram-arrow">→</div>
-                <div class="diagram-section" style="background: rgba(102, 126, 234, 0.1); border-radius: 20px;">
-                    <h3 style="color: #764ba2;">生成AI</h3>
-                    <p style="font-size: 1.2em;">パターン学習<br>創造的生成</p>
-                    <div style="font-size: 3em; margin: 20px 0;">🧠</div>
+                
+                <!-- Enhanced Arrow -->
+                <div style="display: flex; align-items: center; margin: 0 30px;">
+                    <svg width="60" height="60" viewBox="0 0 60 60">
+                        <defs>
+                            <linearGradient id="arrowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M10 30 L35 30 M25 20 L35 30 L25 40" stroke="url(#arrowGradient)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+                        </path>
+                        <circle cx="45" cy="30" r="8" fill="url(#arrowGradient)" opacity="0.3">
+                            <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                    </svg>
                 </div>
-                <div class="diagram-arrow">→</div>
-                <div class="diagram-section">
-                    <h3 style="color: #e94560;">出力</h3>
-                    <p style="font-size: 1.2em;">新規コンテンツ</p>
-                    <div style="font-size: 3em; margin: 20px 0;">✨</div>
+                
+                <div class="diagram-section" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15)); border-radius: 25px; padding: 30px; position: relative; overflow: hidden;">
+                    <!-- Background neural network pattern -->
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.1;">
+                        <svg width="100%" height="100%" viewBox="0 0 200 200">
+                            <defs>
+                                <pattern id="neuralPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                                    <circle cx="20" cy="20" r="2" fill="#764ba2"/>
+                                    <line x1="0" y1="20" x2="40" y2="20" stroke="#764ba2" stroke-width="0.5"/>
+                                    <line x1="20" y1="0" x2="20" y2="40" stroke="#764ba2" stroke-width="0.5"/>
+                                </pattern>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#neuralPattern)"/>
+                        </svg>
+                    </div>
+                    
+                    <h3 style="color: #764ba2; margin-bottom: 20px; position: relative; z-index: 1;">生成AI</h3>
+                    <p style="font-size: 1.4em; margin-bottom: 30px; position: relative; z-index: 1;">パターン学習<br>創造的生成</p>
+                    
+                    <!-- AI Neural Network SVG -->
+                    <div style="display: flex; justify-content: center; margin: 30px 0; position: relative; z-index: 1;">
+                        <svg width="140" height="120" viewBox="0 0 140 120">
+                            <defs>
+                                <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#764ba2;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#667eea;stop-opacity:1" />
+                                </linearGradient>
+                                <filter id="aiGlow">
+                                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            
+                            <!-- Neural network nodes -->
+                            <circle cx="20" cy="30" r="8" fill="url(#aiGradient)" filter="url(#aiGlow)">
+                                <animate attributeName="r" values="8;12;8" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="20" cy="60" r="8" fill="url(#aiGradient)" filter="url(#aiGlow)">
+                                <animate attributeName="r" values="8;12;8" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="20" cy="90" r="8" fill="url(#aiGradient)" filter="url(#aiGlow)">
+                                <animate attributeName="r" values="8;12;8" dur="3s" begin="1s" repeatCount="indefinite"/>
+                            </circle>
+                            
+                            <circle cx="70" cy="20" r="10" fill="url(#aiGradient)" filter="url(#aiGlow)">
+                                <animate attributeName="r" values="10;14;10" dur="2.5s" begin="0.2s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="70" cy="50" r="10" fill="url(#aiGradient)" filter="url(#aiGlow)">
+                                <animate attributeName="r" values="10;14;10" dur="2.5s" begin="0.7s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="70" cy="80" r="10" fill="url(#aiGradient)" filter="url(#aiGlow)">
+                                <animate attributeName="r" values="10;14;10" dur="2.5s" begin="1.2s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="70" cy="100" r="10" fill="url(#aiGradient)" filter="url(#aiGlow)">
+                                <animate attributeName="r" values="10;14;10" dur="2.5s" begin="1.7s" repeatCount="indefinite"/>
+                            </circle>
+                            
+                            <circle cx="120" cy="45" r="8" fill="url(#aiGradient)" filter="url(#aiGlow)">
+                                <animate attributeName="r" values="8;12;8" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="120" cy="75" r="8" fill="url(#aiGradient)" filter="url(#aiGlow)">
+                                <animate attributeName="r" values="8;12;8" dur="3s" begin="2s" repeatCount="indefinite"/>
+                            </circle>
+                            
+                            <!-- Connections -->
+                            <line x1="28" y1="30" x2="62" y2="20" stroke="url(#aiGradient)" stroke-width="2" opacity="0.6">
+                                <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite"/>
+                            </line>
+                            <line x1="28" y1="60" x2="62" y2="50" stroke="url(#aiGradient)" stroke-width="2" opacity="0.6">
+                                <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" begin="0.5s" repeatCount="indefinite"/>
+                            </line>
+                            <line x1="28" y1="90" x2="62" y2="80" stroke="url(#aiGradient)" stroke-width="2" opacity="0.6">
+                                <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" begin="1s" repeatCount="indefinite"/>
+                            </line>
+                            
+                            <line x1="78" y1="20" x2="112" y2="45" stroke="url(#aiGradient)" stroke-width="2" opacity="0.6">
+                                <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.5s" begin="0.3s" repeatCount="indefinite"/>
+                            </line>
+                            <line x1="78" y1="50" x2="112" y2="45" stroke="url(#aiGradient)" stroke-width="2" opacity="0.6">
+                                <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.5s" begin="0.8s" repeatCount="indefinite"/>
+                            </line>
+                            <line x1="78" y1="80" x2="112" y2="75" stroke="url(#aiGradient)" stroke-width="2" opacity="0.6">
+                                <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.5s" begin="1.3s" repeatCount="indefinite"/>
+                            </line>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Arrow -->
+                <div style="display: flex; align-items: center; margin: 0 30px;">
+                    <svg width="60" height="60" viewBox="0 0 60 60">
+                        <path d="M10 30 L35 30 M25 20 L35 30 L25 40" stroke="url(#arrowGradient)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+                        </path>
+                        <circle cx="45" cy="30" r="8" fill="url(#arrowGradient)" opacity="0.3">
+                            <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                    </svg>
+                </div>
+                
+                <div class="diagram-section" style="position: relative;">
+                    <h3 style="color: #e94560; margin-bottom: 20px;">出力</h3>
+                    <p style="font-size: 1.4em; margin-bottom: 30px;">新規コンテンツ</p>
+                    
+                    <!-- Output Creative SVG -->
+                    <div style="display: flex; justify-content: center; margin: 30px 0;">
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                            <defs>
+                                <linearGradient id="outputGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#e94560;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#f093fb;stop-opacity:1" />
+                                </linearGradient>
+                                <filter id="outputGlow">
+                                    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            
+                            <!-- Creative burst design -->
+                            <g transform="translate(60,60)">
+                                <!-- Central core -->
+                                <circle r="15" fill="url(#outputGradient)" filter="url(#outputGlow)">
+                                    <animate attributeName="r" values="15;20;15" dur="2s" repeatCount="indefinite"/>
+                                </circle>
+                                
+                                <!-- Radiating elements -->
+                                <g>
+                                    <circle cx="0" cy="-35" r="5" fill="url(#outputGradient)" opacity="0.8" filter="url(#outputGlow)">
+                                        <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite"/>
+                                        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="10s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <circle cx="25" cy="-25" r="4" fill="url(#outputGradient)" opacity="0.7" filter="url(#outputGlow)">
+                                        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+                                        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="12s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <circle cx="35" cy="0" r="6" fill="url(#outputGradient)" opacity="0.6" filter="url(#outputGlow)">
+                                        <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" begin="1s" repeatCount="indefinite"/>
+                                        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="8s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <circle cx="25" cy="25" r="4" fill="url(#outputGradient)" opacity="0.8" filter="url(#outputGlow)">
+                                        <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.5s" repeatCount="indefinite"/>
+                                        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="14s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <circle cx="0" cy="35" r="5" fill="url(#outputGradient)" opacity="0.7" filter="url(#outputGlow)">
+                                        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="3s" begin="2s" repeatCount="indefinite"/>
+                                        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="11s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <circle cx="-25" cy="25" r="4" fill="url(#outputGradient)" opacity="0.6" filter="url(#outputGlow)">
+                                        <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" begin="2.5s" repeatCount="indefinite"/>
+                                        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="9s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <circle cx="-35" cy="0" r="6" fill="url(#outputGradient)" opacity="0.8" filter="url(#outputGlow)">
+                                        <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="3s" repeatCount="indefinite"/>
+                                        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="13s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <circle cx="-25" cy="-25" r="4" fill="url(#outputGradient)" opacity="0.7" filter="url(#outputGlow)">
+                                        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="3s" begin="3.5s" repeatCount="indefinite"/>
+                                        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="15s" repeatCount="indefinite"/>
+                                    </circle>
+                                </g>
+                                
+                                <!-- Outer ring -->
+                                <circle r="45" fill="none" stroke="url(#outputGradient)" stroke-width="2" opacity="0.3" stroke-dasharray="5,5">
+                                    <animate attributeName="opacity" values="0.1;0.5;0.1" dur="4s" repeatCount="indefinite"/>
+                                    <animateTransform attributeName="transform" type="rotate" values="0;360" dur="20s" repeatCount="indefinite"/>
+                                </circle>
+                            </g>
+                        </svg>
+                    </div>
                 </div>
             </div>
-            <div style="margin-top: 40px; text-align: center;">
-                <p style="font-size: 1.5em; font-weight: 600;">従来AI: <span style="color: #667eea;">予測・分類</span> → 生成AI: <span class="highlight">創造・生成</span></p>
+            
+            <div style="margin-top: 60px; text-align: center;">
+                <div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(233, 69, 96, 0.1)); padding: 30px; border-radius: 20px; border: 2px solid transparent; position: relative;">
+                    <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(135deg, #667eea, #e94560); border-radius: 20px; z-index: -1; opacity: 0.3;"></div>
+                    <p style="font-size: 2em; font-weight: 600; margin: 0;">
+                        従来AI: <span style="color: #667eea;">予測・分類</span> → 生成AI: <span class="highlight">創造・生成</span>
+                    </p>
+                </div>
             </div>
-            <div class="slide-number">3 / 17</div>
+            <div class="slide-number">3 / 18</div>
         </div>
 
-        <!-- Slide 4: LLM -->
-        <div class="slide" id="s04_llm">
+        <!-- Slide 4: Context Window -->
+        <div class="slide" id="s04_context_window">
+            <h2>コンテキストウィンドウ（入力トークン数）</h2>
+            
+            <div style="display: flex; justify-content: space-between; margin: 40px 0;">
+                <div style="flex: 1; margin-right: 30px;">
+                    <h3 style="color: #667eea; margin-bottom: 25px;">💬 会話の記憶メカニズム</h3>
+                    <ul style="font-size: 1.2em;">
+                        <li><strong>同じスレッド内</strong>の内容はコンテキストウィンドウが許す限り保持</li>
+                        <li><strong>容量オーバー</strong>すると古い内容から順次削除</li>
+                        <li><strong>Claude</strong>は全内容保持するが限界会話数が存在</li>
+                    </ul>
+                </div>
+                
+                <div style="flex: 1; margin-left: 30px;">
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px;">
+                        <h3 style="color: #e94560; text-align: center; margin-bottom: 20px;">📊 主要ツールの容量</h3>
+                        <div style="display: flex; flex-direction: column; gap: 15px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: rgba(102,126,234,0.2); border-radius: 8px;">
+                                <span style="font-weight: 600;">ChatGPT</span>
+                                <span style="color: #667eea;">128K トークン</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: rgba(66,133,244,0.2); border-radius: 8px;">
+                                <span style="font-weight: 600;">Gemini</span>
+                                <span style="color: #4285F4;">1M トークン</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: rgba(212,165,116,0.2); border-radius: 8px;">
+                                <span style="font-weight: 600;">Claude</span>
+                                <span style="color: #D4A574;">200K トークン</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="note" style="margin-top: 30px;">
+                <h3 style="color: #764ba2; margin-bottom: 15px;">🔧 カスタムインストラクション</h3>
+                <p style="font-size: 1.1em; margin-bottom: 10px;">
+                    <strong>全会話で利用できる共通プロンプト</strong> — 会話履歴が削除されてもカスタムインストラクションは保持される
+                </p>
+                <p style="font-size: 1em; color: rgba(255,255,255,0.8);">
+                    例：「敬語を使って回答」「専門用語は分かりやすく説明」などの指示を設定
+                </p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(233,69,96,0.1)); border-radius: 15px;">
+                <p style="font-size: 1.3em; font-weight: 600;">
+                    💡 <span class="highlight">長い会話ほど文脈を理解</span>するが、容量制限に注意
+                </p>
+            </div>
+            
+            <div class="slide-number">4 / 18</div>
+        </div>
+
+        <!-- Slide 5: LLM -->
+        <div class="slide" id="s05_llm">
             <h2>LLM（大規模言語モデル）</h2>
             <p style="font-size: 1.6em; text-align: center; margin-bottom: 40px;">
                 <span class="highlight">数億～数兆</span>パラメータを持つ汎用モデル
