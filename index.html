@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成AIが変える未来 - 2025</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progress"></div>
+    </div>
+
+    <div class="slide-container" id="slideContainer">
+        <!-- Slide 1: Cover -->
+        <div class="slide active cover-slide" id="s01_cover">
+            <h1>生成AIが変える未来</h1>
+            <h2 style="color: #e0e0e0; font-size: 2em;">生成AIの展望 2025</h2>
+            <p style="font-size: 1.5em; margin-top: 30px;">10分でわかる最新動向と実践術</p>
+            <div class="visual-placeholder" style="height: 200px; margin-top: 50px; background: none; border: none;">
+                <svg width="400" height="200" viewBox="0 0 400 200">
+                    <defs>
+                        <linearGradient id="brain-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#764ba2;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#e94560;stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <g transform="translate(200,100)">
+                        <circle r="80" fill="none" stroke="url(#brain-gradient)" stroke-width="2" opacity="0.3" filter="url(#glow)">
+                            <animate attributeName="r" from="80" to="90" dur="2s" repeatCount="indefinite" />
+                            <animate attributeName="opacity" from="0.3" to="0.6" dur="2s" repeatCount="indefinite" />
+                        </circle>
+                        <circle r="60" fill="none" stroke="url(#brain-gradient)" stroke-width="3" opacity="0.5" filter="url(#glow)">
+                            <animate attributeName="r" from="60" to="70" dur="2s" begin="0.5s" repeatCount="indefinite" />
+                        </circle>
+                        <circle r="40" fill="none" stroke="url(#brain-gradient)" stroke-width="4" opacity="0.7" filter="url(#glow)">
+                            <animate attributeName="r" from="40" to="50" dur="2s" begin="1s" repeatCount="indefinite" />
+                        </circle>
+                        <circle r="20" fill="url(#brain-gradient)" filter="url(#glow)">
+                            <animate attributeName="r" from="20" to="25" dur="2s" begin="1.5s" repeatCount="indefinite" />
+                        </circle>
+                    </g>
+                </svg>
+            </div>
+            <div class="presenter-info">
+                <div class="company">ソフトバンク株式会社</div>
+                <div class="name">中村亮太</div>
+            </div>
+            <div class="slide-number">1 / 17</div>
+        </div>
+
+        <!-- Slide 2: Agenda -->
+        <div class="slide" id="s02_agenda">
+            <h2>アジェンダ</h2>
+            <ul>
+                <li>生成AIとは</li>
+                <li>代表的な生成AIツール</li>
+                <li>さらなる生成AIと使いこなし例</li>
+                <li>この2～3年の変化と今後の予想</li>
+                <li>キャッチアップの重要性と方法</li>
+                <li>生成AIを使いこなすステップ</li>
+                <li>質疑応答 & エンゲージメント</li>
+            </ul>
+            <div class="slide-number">2 / 17</div>
+        </div>
+
+        <!-- Slide 3: Definition -->
+        <div class="slide" id="s03_genai_definition">
+            <h2>生成AIとは</h2>
+            <div class="genai-diagram">
+                <div class="diagram-section">
+                    <h3 style="color: #667eea;">入力</h3>
+                    <p style="font-size: 1.2em;">テキスト・画像・音声</p>
+                    <div style="font-size: 3em; margin: 20px 0;">📝</div>
+                </div>
+                <div class="diagram-arrow">→</div>
+                <div class="diagram-section" style="background: rgba(102, 126, 234, 0.1); border-radius: 20px;">
+                    <h3 style="color: #764ba2;">生成AI</h3>
+                    <p style="font-size: 1.2em;">パターン学習<br>創造的生成</p>
+                    <div style="font-size: 3em; margin: 20px 0;">🧠</div>
+                </div>
+                <div class="diagram-arrow">→</div>
+                <div class="diagram-section">
+                    <h3 style="color: #e94560;">出力</h3>
+                    <p style="font-size: 1.2em;">新規コンテンツ</p>
+                    <div style="font-size: 3em; margin: 20px 0;">✨</div>
+                </div>
+            </div>
+            <div style="margin-top: 40px; text-align: center;">
+                <p style="font-size: 1.5em; font-weight: 600;">従来AI: <span style="color: #667eea;">予測・分類</span> → 生成AI: <span class="highlight">創造・生成</span></p>
+            </div>
+            <div class="slide-number">3 / 17</div>
+        </div>
+
+        <!-- Slide 4: LLM -->
+        <div class="slide" id="s04_llm">
+            <h2>LLM（大規模言語モデル）</h2>
+            <p style="font-size: 1.6em; text-align: center; margin-bottom: 40px;">
+                <span class="highlight">数億～数兆</span>パラメータを持つ汎用モデル
+            </p>
+            <div class="param-visual">
+                <div class="param-bar">
+                    <div class="param-value">1.5B</div>
+                    <div class="param-label">GPT-2</div>
+                </div>
+                <div class="param-bar">
+                    <div class="param-value">175B</div>
+                    <div class="param-label">GPT-3</div>
+                </div>
+                <div class="param-bar">
+                    <div class="param-value">1.76T</div>
+                    <div class="param-label">GPT-4</div>
+                </div>
+                <div class="param-bar">
+                    <div class="param-value">1.8T</div>
+                    <div class="param-label">Gemini</div>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: space-around; margin-top: 60px;">
+                <div style="text-align: center; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 15px; flex: 1; margin: 0 10px;">
+                    <h3 style="color: #667eea; font-size: 1.3em;">多様なタスク</h3>
+                    <p>1モデルで処理</p>
+                </div>
+                <div style="text-align: center; padding: 20px; background: rgba(233, 69, 96, 0.1); border-radius: 15px; flex: 1; margin: 0 10px;">
+                    <h3 style="color: #e94560; font-size: 1.3em;">性能向上</h3>
+                    <p>RLHF/微調整</p>
+                </div>
+            </div>
+            <div class="slide-number">4 / 17</div>
+        </div>
+
+        <!-- Slide 5: Strengths/Weaknesses -->
+        <div class="slide" id="s06_strength_weak">
+            <h2>得意なこと／苦手なこと</h2>
+            <div class="table-container" style="margin-top: 40px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="text-align: center; font-size: 1.5em;">得意分野</th>
+                            <th style="text-align: center; font-size: 1.5em;">苦手分野</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-size: 1.3em; padding: 30px;">自然文・コード生成</td>
+                            <td style="font-size: 1.3em; padding: 30px;">最新専門情報</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 1.3em; padding: 30px;">大量データ要約</td>
+                            <td style="font-size: 1.3em; padding: 30px;">複雑推論／リアルタイム作業</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 1.3em; padding: 30px;">創造的なアイデア生成</td>
+                            <td style="font-size: 1.3em; padding: 30px;">事実確認・計算精度</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="note" style="margin-top: 40px; font-size: 1.2em;">
+                <strong>注意：</strong> ハルシネーション（誤情報生成）対策として人間のチェックが必須
+            </div>
+            <div class="slide-number">5 / 17</div>
+        </div>
+
+        <!-- Slide 6: Tools Overview -->
+        <div class="slide" id="s07_tools_overview">
+            <h2>主要ツール比較</h2>
+            <div class="table-container" style="margin-top: 30px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="text-align: center; width: 25%;">ツール</th>
+                            <th style="text-align: center; width: 40%;">特徴</th>
+                            <th style="text-align: center; width: 35%;">得意領域</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-size: 1.4em; font-weight: 600; text-align: center;">ChatGPT</td>
+                            <td style="font-size: 1.2em;">汎用性が高く拡張機能豊富</td>
+                            <td style="font-size: 1.2em;">文章作成・コード生成</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 1.4em; font-weight: 600; text-align: center;">Gemini</td>
+                            <td style="font-size: 1.2em;">マルチモーダル対応</td>
+                            <td style="font-size: 1.2em;">テキスト＋画像＋音声</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 1.4em; font-weight: 600; text-align: center;">Claude</td>
+                            <td style="font-size: 1.2em;">10万トークン長文対応</td>
+                            <td style="font-size: 1.2em;">開発支援・分析</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="slide-number">6 / 17</div>
+        </div>
+
+        <!-- Slide 7: ChatGPT -->
+        <div class="slide" id="s08_chatgpt">
+            <h2>ChatGPT</h2>
+            <div class="tool-grid">
+                <div style="flex: 1;">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <rect width="100" height="100" rx="20" fill="url(#chatgpt-gradient)"/>
+                            <defs>
+                                <linearGradient id="chatgpt-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#74AA9C;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#4A7C59;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <text x="50" y="60" text-anchor="middle" fill="white" font-size="40" font-weight="bold">GPT</text>
+                        </svg>
+                    </div>
+                    <ul style="font-size: 1.3em;">
+                        <li>2022年公開、爆発的人気</li>
+                        <li>ミッション：AGIを全人類に</li>
+                        <li>Code Interpreter など周辺機能が充実</li>
+                        <li>GPT-4o: マルチモーダル対応</li>
+                    </ul>
+                </div>
+                <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px; width: 100%;">
+                        <h3 style="color: #74AA9C; text-align: center; margin-bottom: 20px;">対話例</h3>
+                        <div style="background: rgba(116,170,156,0.2); padding: 15px; border-radius: 10px; margin-bottom: 15px;">
+                            <p style="margin: 0;">User: Pythonでソートアルゴリズムを書いて</p>
+                        </div>
+                        <div style="background: rgba(74,124,89,0.2); padding: 15px; border-radius: 10px;">
+                            <p style="margin: 0;">ChatGPT: もちろんです！クイックソートの実装例を...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">7 / 17</div>
+        </div>
+
+        <!-- Slide 8: Gemini -->
+        <div class="slide" id="s09_gemini">
+            <h2>Gemini</h2>
+            <div class="tool-grid">
+                <div style="flex: 1;">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <rect width="100" height="100" rx="20" fill="url(#gemini-gradient)"/>
+                            <defs>
+                                <linearGradient id="gemini-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#4285F4;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#DB4437;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#F4B400;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <text x="50" y="60" text-anchor="middle" fill="white" font-size="35" font-weight="bold">Gem</text>
+                        </svg>
+                    </div>
+                    <ul style="font-size: 1.3em;">
+                        <li>テキスト・画像・音声を同時理解</li>
+                        <li>Ultra／Pro／Flash／Nano の4モデル</li>
+                        <li>DeepMind の強化学習で推論力向上</li>
+                        <li>100万トークンのコンテキスト</li>
+                    </ul>
+                </div>
+                <div style="flex: 1; display: flex; align-items: center;">
+                    <div style="text-align: center; width: 100%;">
+                        <h3 style="color: #4285F4; margin-bottom: 20px;">マルチモーダル処理</h3>
+                        <div style="display: flex; justify-content: space-around;">
+                            <div style="background: rgba(66,133,244,0.2); padding: 20px; border-radius: 10px;">
+                                <div style="font-size: 2em;">📝</div>
+                                <p>テキスト</p>
+                            </div>
+                            <div style="background: rgba(219,68,55,0.2); padding: 20px; border-radius: 10px;">
+                                <div style="font-size: 2em;">🖼️</div>
+                                <p>画像</p>
+                            </div>
+                            <div style="background: rgba(244,180,0,0.2); padding: 20px; border-radius: 10px;">
+                                <div style="font-size: 2em;">🎵</div>
+                                <p>音声</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">8 / 17</div>
+        </div>
+
+        <!-- Slide 9: Claude -->
+        <div class="slide" id="s10_claude">
+            <h2>Claude</h2>
+            <div class="tool-grid">
+                <div style="flex: 1;">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <rect width="100" height="100" rx="20" fill="url(#claude-gradient)"/>
+                            <defs>
+                                <linearGradient id="claude-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#D4A574;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#8B6239;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <text x="50" y="60" text-anchor="middle" fill="white" font-size="50" font-weight="300" font-family="serif">C</text>
+                        </svg>
+                    </div>
+                    <ul style="font-size: 1.3em;">
+                        <li>10万トークン超の長文を処理</li>
+                        <li>安全性重視で自然な回答</li>
+                        <li>Artifacts：Webアプリ生成機能</li>
+                        <li>コンピュータ操作機能（β版）</li>
+                    </ul>
+                </div>
+                <div style="flex: 1; display: flex; align-items: center;">
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px; width: 100%;">
+                        <h3 style="color: #D4A574; text-align: center; margin-bottom: 20px;">Artifacts機能</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <div style="background: rgba(212,165,116,0.2); padding: 20px; border-radius: 10px; text-align: center;">
+                                <p>コード生成</p>
+                            </div>
+                            <div style="background: rgba(139,98,57,0.2); padding: 20px; border-radius: 10px; text-align: center;">
+                                <p>即座にプレビュー</p>
+                            </div>
+                            <div style="background: rgba(212,165,116,0.2); padding: 20px; border-radius: 10px; text-align: center;">
+                                <p>React/HTML</p>
+                            </div>
+                            <div style="background: rgba(139,98,57,0.2); padding: 20px; border-radius: 10px; text-align: center;">
+                                <p>ダッシュボード作成</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">9 / 17</div>
+        </div>
+
+        <!-- Slide 10: Bolt -->
+        <div class="slide" id="s11_bolt">
+            <h2>Bolt</h2>
+            <div class="tool-grid">
+                <div style="flex: 1;">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <rect width="100" height="100" rx="20" fill="url(#bolt-gradient)"/>
+                            <defs>
+                                <linearGradient id="bolt-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FFC107;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M 35 20 L 25 50 L 40 50 L 30 80 L 70 40 L 50 40 L 65 20 Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <ul style="font-size: 1.3em;">
+                        <li>自然言語→数分でWebアプリ完成</li>
+                        <li>ノーコード × 高速プロトタイピング</li>
+                        <li>フルスタック開発をAIが代行</li>
+                    </ul>
+                </div>
+                <div style="flex: 1;">
+                    <div class="timeline" style="margin-top: 30px;">
+                        <div class="timeline-item">
+                            <div style="font-size: 1.5em;">💬</div>
+                            <p style="margin: 10px 0;">要件入力</p>
+                            <p style="font-size: 0.9em; color: rgba(255,255,255,0.6);">30秒</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div style="font-size: 1.5em;">⚡</div>
+                            <p style="margin: 10px 0;">自動生成</p>
+                            <p style="font-size: 0.9em; color: rgba(255,255,255,0.6);">2分</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div style="font-size: 1.5em;">🚀</div>
+                            <p style="margin: 10px 0;">デプロイ</p>
+                            <p style="font-size: 0.9em; color: rgba(255,255,255,0.6);">即時</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">10 / 17</div>
+        </div>
+
+        <!-- Slide 11: Dify -->
+        <div class="slide" id="s12_dify">
+            <h2>Dify - AIアプリケーション開発プラットフォーム</h2>
+            <div class="tool-grid">
+                <div style="flex: 1;">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <rect width="100" height="100" rx="20" fill="url(#dify-gradient)"/>
+                            <defs>
+                                <linearGradient id="dify-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <text x="50" y="60" text-anchor="middle" fill="white" font-size="35" font-weight="bold">Dify</text>
+                        </svg>
+                    </div>
+                    <ul style="font-size: 1.3em;">
+                        <li>ビジュアルプログラミングでAI構築</li>
+                        <li>複数LLMの統合管理</li>
+                        <li>RAG（検索拡張生成）対応</li>
+                        <li>エンタープライズ向け機能充実</li>
+                    </ul>
+                </div>
+                <div style="flex: 1;">
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px;">
+                        <h3 style="color: #6366F1; text-align: center; margin-bottom: 20px;">活用例</h3>
+                        <div style="display: flex; flex-direction: column; gap: 15px;">
+                            <div style="background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(139,92,246,0.1)); padding: 20px; border-radius: 10px;">
+                                <p style="font-weight: 600; margin-bottom: 5px;">カスタマーサポートBot</p>
+                                <p style="font-size: 0.9em; color: rgba(255,255,255,0.7);">社内ナレッジベース連携</p>
+                            </div>
+                            <div style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.1)); padding: 20px; border-radius: 10px;">
+                                <p style="font-weight: 600; margin-bottom: 5px;">ドキュメント分析AI</p>
+                                <p style="font-size: 0.9em; color: rgba(255,255,255,0.7);">PDF/Excel自動処理</p>
+                            </div>
+                            <div style="background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(139,92,246,0.1)); padding: 20px; border-radius: 10px;">
+                                <p style="font-weight: 600; margin-bottom: 5px;">ワークフロー自動化</p>
+                                <p style="font-size: 0.9em; color: rgba(255,255,255,0.7);">API連携で業務効率化</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">11 / 17</div>
+        </div>
+
+        <!-- Slide 12: Changes -->
+        <div class="slide" id="s13_change_3years">
+            <h2>過去2〜3年の進化：パラメータ数の爆発的成長</h2>
+            <div class="chart-container">
+                <canvas id="growthChart"></canvas>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <p style="font-size: 1.3em; color: rgba(255,255,255,0.9);">
+                    <span class="highlight">1000倍以上</span>の成長を達成（GPT-2→GPT-4）
+                </p>
+            </div>
+            <div class="slide-number">12 / 17</div>
+        </div>
+
+        <!-- Slide 13: Research -->
+        <div class="slide" id="s14_research">
+            <h2>AI 2027：AGI到達予測</h2>
+            <div class="paper-content">
+                <div class="paper-title">AI 2027 - 元OpenAI研究者らによる予測</div>
+                <div class="paper-abstract">
+                    <p><strong>2025年中頃：</strong> AIエージェントが実用レベルに到達。SWEBench（ソフトウェアエンジニアリングベンチマーク）で85%達成</p>
+                    <p><strong>2026年：</strong> AI自己改善により、アルゴリズム開発速度が50%向上。AIがAI研究を加速する正のフィードバックループが形成</p>
+                    <p><strong>2027年前半：</strong> 超人的コーディング能力を持つAI（Agent-3）が登場。20万体のコピーが30倍速で動作し、R&D速度が4-5倍に</p>
+                    <p><strong>2027年後半：</strong> AGI（汎用人工知能）に到達。その数ヶ月後にASI（超知能）へ移行する可能性</p>
+                </div>
+            </div>
+            <div class="note" style="margin-top: 30px;">
+                <strong>重要：</strong> この予測は楽観的シナリオ。データ枯渇、計算資源の限界、規制強化などにより、実際のタイムラインは大きく遅れる可能性がある
+            </div>
+            <div class="slide-number">13 / 17</div>
+        </div>
+
+        <!-- Slide 14: Catchup -->
+        <div class="slide" id="s15_catchup">
+            <h2>キャッチアップ方法</h2>
+            <ul>
+                <li>公式ブログ（OpenAI・Google AI など）</li>
+                <li>X：ChatGPT研究所 ほか</li>
+                <li>YouTube 解説動画</li>
+                <li>社内：アクロスレシピ</li>
+            </ul>
+            <div class="note">
+                進化速度が速い → 情報習慣化が鍵
+            </div>
+            <div class="slide-number">14 / 17</div>
+        </div>
+
+        <!-- Slide 15: Steps -->
+        <div class="slide" id="s16_mastery_steps">
+            <h2>生成AIを業務に組み込むステップ</h2>
+            <ul class="numbered-list">
+                <li><strong>体験フェーズ：</strong> まずは個人でChatGPTやClaudeを使ってみる</li>
+                <li><strong>学習フェーズ：</strong> プロンプトエンジニアリングを学び、効果的な指示方法を習得</li>
+                <li><strong>試行フェーズ：</strong> 小規模な業務タスクで効果を検証（議事録作成、メール下書きなど）</li>
+                <li><strong>展開フェーズ：</strong> チーム内で成功事例を共有し、標準化を進める</li>
+                <li><strong>統合フェーズ：</strong> APIやDifyなどを活用し、既存システムと連携</li>
+            </ul>
+            <div class="note" style="margin-top: 40px; font-size: 1.2em;">
+                <strong>今回の目標：</strong> 参加者全員が「試行フェーズ」に入り、実際の業務で生成AIを活用できるようになること
+            </div>
+            <div class="slide-number">15 / 17</div>
+        </div>
+
+        <!-- Slide 16: Summary -->
+        <div class="slide" id="s17_key_takeaway">
+            <h2 style="text-align: center; margin-bottom: 50px;">まとめとキーテイクアウェイ</h2>
+            <div class="summary-content">
+                <div class="summary-points">
+                    <div class="summary-point" style="background: linear-gradient(135deg, rgba(102,126,234,0.2) 0%, rgba(102,126,234,0.1) 100%);">
+                        生成AIは創造的業務を刷新する革命的技術
+                    </div>
+                    <div class="summary-point" style="background: linear-gradient(135deg, rgba(118,75,162,0.2) 0%, rgba(118,75,162,0.1) 100%);">
+                        ツールの特徴を理解し、適材適所で活用することが成功の鍵
+                    </div>
+                    <div class="summary-point" style="background: linear-gradient(135deg, rgba(233,69,96,0.2) 0%, rgba(233,69,96,0.1) 100%);">
+                        継続的な学習と実践が、AI時代の競争優位性を生む
+                    </div>
+                </div>
+                <div style="margin-top: 50px;">
+                    <h3 style="font-size: 2.5em; text-align: center; background: linear-gradient(135deg, #667eea 0%, #e94560 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        共に未来を創造しよう
+                    </h3>
+                </div>
+            </div>
+            <div class="slide-number">16 / 17</div>
+        </div>
+
+        <!-- Slide 17: Questions -->
+        <div class="slide" id="s18_question">
+            <div class="impact-container">
+                <h2 style="margin-bottom: 40px;">質問・エンゲージメント</h2>
+                <div class="impact-message">
+                    このプレゼンテーションは<br>
+                    生成AIで作りましたが、気づきましたか？
+                </div>
+                <div class="reveal-container">
+                    <button class="reveal-button" onclick="revealSecret()">
+                        答えを見る
+                    </button>
+                    <div class="reveal-content" id="revealContent">
+                        <div class="final-message">
+                            <h3 style="font-size: 2em; margin-bottom: 20px; color: #fff;">
+                                実はこのプレゼンテーション全体が
+                            </h3>
+                            <p style="font-size: 3em; margin: 20px 0; font-weight: bold; background: linear-gradient(135deg, #667eea 0%, #e94560 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                Claude（生成AI）
+                            </p>
+                            <p style="font-size: 1.8em; margin-top: 20px;">
+                                によって作成されました！
+                            </p>
+                            <div style="margin-top: 40px; font-size: 1.3em; color: rgba(255,255,255,0.8);">
+                                <p>デザイン・構成・グラフ・アニメーション</p>
+                                <p style="font-weight: 600; color: #e94560;">すべてAIが生成</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="confetti" class="confetti"></div>
+                <div id="fireworks"></div>
+            </div>
+            <div class="slide-number">17 / 17</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="previousSlide()">◀ 前へ</button>
+        <button onclick="nextSlide()">次へ ▶</button>
+        <button onclick="toggleFullscreen()">フルスクリーン</button>
+    </div>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    
+    <!-- メインスクリプト -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>
