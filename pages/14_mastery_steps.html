@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成AIが変える未来 - 活用ステップ</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1em;
+            color: rgba(255,255,255,0.6);
+        }
+        .reveal-content {
+            display: none;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes confetti-fall {
+            0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h2>生成AIを業務に組み込むステップ</h2>
+            <ul class="numbered-list">
+                <li><strong>体験フェーズ：</strong> まずは個人でChatGPTやClaudeを使ってみる</li>
+                <li><strong>学習フェーズ：</strong> プロンプトエンジニアリングを学び、効果的な指示方法を習得</li>
+                <li><strong>試行フェーズ：</strong> 小規模な業務タスクで効果を検証（議事録作成、メール下書きなど）</li>
+                <li><strong>展開フェーズ：</strong> チーム内で成功事例を共有し、標準化を進める</li>
+                <li><strong>統合フェーズ：</strong> APIやDifyなどを活用し、既存システムと連携</li>
+            </ul>
+            <div class="note" style="margin-top: 40px; font-size: 1.2em;">
+                <strong>今回の目標：</strong> 参加者全員が「試行フェーズ」に入り、実際の業務で生成AIを活用できるようになること
+            </div>
+        <div class="slide-number">14 / 16</div>
+    </div>
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    
+    <script>
+        // revealSecret function for question slide
+        function revealSecret() {
+            const revealContent = document.getElementById('revealContent');
+            const confetti = document.getElementById('confetti');
+            const fireworks = document.getElementById('fireworks');
+            
+            if (revealContent) {
+                revealContent.style.display = 'block';
+                revealContent.style.animation = 'slideDown 0.5s ease-out';
+            }
+            
+            createConfetti();
+            createFireworks();
+        }
+        
+        function createConfetti() {
+            const confettiContainer = document.getElementById('confetti');
+            if (!confettiContainer) return;
+            
+            for (let i = 0; i < 50; i++) {
+                const confettiPiece = document.createElement('div');
+                confettiPiece.style.position = 'absolute';
+                confettiPiece.style.width = '10px';
+                confettiPiece.style.height = '10px';
+                confettiPiece.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                confettiPiece.style.left = Math.random() * 100 + 'vw';
+                confettiPiece.style.top = '-10px';
+                confettiPiece.style.borderRadius = '50%';
+                confettiPiece.style.animation = `confetti-fall ${Math.random() * 3 + 2}s linear infinite`;
+                confettiContainer.appendChild(confettiPiece);
+                
+                setTimeout(() => {
+                    confettiPiece.remove();
+                }, 5000);
+            }
+        }
+        
+        function createFireworks() {
+            console.log('Fireworks created!');
+        }
+        
+        // Chart initialization for change_3years slide
+        if (document.getElementById('growthChart')) {
+            const ctx = document.getElementById('growthChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['GPT-1 (2018)', 'GPT-2 (2019)', 'GPT-3 (2020)', 'GPT-3.5 (2022)', 'GPT-4 (2023)', 'GPT-4o (2024)'],
+                    datasets: [{
+                        label: 'パラメータ数 (億)',
+                        data: [0.117, 1.5, 175, 175, 1760, 1800],
+                        backgroundColor: [
+                            'rgba(102, 126, 234, 0.8)',
+                            'rgba(118, 75, 162, 0.8)',
+                            'rgba(233, 69, 96, 0.8)',
+                            'rgba(240, 147, 251, 0.8)',
+                            'rgba(102, 126, 234, 0.9)',
+                            'rgba(233, 69, 96, 0.9)'
+                        ],
+                        borderColor: [
+                            'rgba(102, 126, 234, 1)',
+                            'rgba(118, 75, 162, 1)',
+                            'rgba(233, 69, 96, 1)',
+                            'rgba(240, 147, 251, 1)',
+                            'rgba(102, 126, 234, 1)',
+                            'rgba(233, 69, 96, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            type: 'logarithmic',
+                            ticks: {
+                                color: 'rgba(255,255,255,0.8)'
+                            },
+                            grid: {
+                                color: 'rgba(255,255,255,0.1)'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: 'rgba(255,255,255,0.8)'
+                            },
+                            grid: {
+                                color: 'rgba(255,255,255,0.1)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

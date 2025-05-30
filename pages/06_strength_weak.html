@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成AIが変える未来 - 得意・苦手</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1em;
+            color: rgba(255,255,255,0.6);
+        }
+        .reveal-content {
+            display: none;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes confetti-fall {
+            0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h2>得意なこと／苦手なこと</h2>
+            <div class="table-container" style="margin-top: 40px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="text-align: center; font-size: 1.5em;">得意分野</th>
+                            <th style="text-align: center; font-size: 1.5em;">苦手分野</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-size: 1.3em; padding: 30px;">自然文・コード生成</td>
+                            <td style="font-size: 1.3em; padding: 30px;">最新専門情報</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 1.3em; padding: 30px;">大量データ要約</td>
+                            <td style="font-size: 1.3em; padding: 30px;">複雑推論／リアルタイム作業</td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 1.3em; padding: 30px;">創造的なアイデア生成</td>
+                            <td style="font-size: 1.3em; padding: 30px;">事実確認・計算精度</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="note" style="margin-top: 40px; font-size: 1.2em;">
+                <strong>注意：</strong> ハルシネーション（誤情報生成）対策として人間のチェックが必須
+            </div>
+        <div class="slide-number">6 / 18</div>
+    </div>
+    
+    <!-- Chart.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    
+    <script>
+        // revealSecret function for question slide
+        function revealSecret() {
+            const revealContent = document.getElementById('revealContent');
+            const confetti = document.getElementById('confetti');
+            const fireworks = document.getElementById('fireworks');
+            
+            if (revealContent) {
+                revealContent.style.display = 'block';
+                revealContent.style.animation = 'slideDown 0.5s ease-out';
+            }
+            
+            createConfetti();
+            createFireworks();
+        }
+        
+        function createConfetti() {
+            const confettiContainer = document.getElementById('confetti');
+            if (!confettiContainer) return;
+            
+            for (let i = 0; i < 50; i++) {
+                const confettiPiece = document.createElement('div');
+                confettiPiece.style.position = 'absolute';
+                confettiPiece.style.width = '10px';
+                confettiPiece.style.height = '10px';
+                confettiPiece.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                confettiPiece.style.left = Math.random() * 100 + 'vw';
+                confettiPiece.style.top = '-10px';
+                confettiPiece.style.borderRadius = '50%';
+                confettiPiece.style.animation = `confetti-fall ${Math.random() * 3 + 2}s linear infinite`;
+                confettiContainer.appendChild(confettiPiece);
+                
+                setTimeout(() => {
+                    confettiPiece.remove();
+                }, 5000);
+            }
+        }
+        
+        function createFireworks() {
+            console.log('Fireworks created!');
+        }
+        
+        // Chart initialization for change_3years slide
+        if (document.getElementById('growthChart')) {
+            const ctx = document.getElementById('growthChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['GPT-1 (2018)', 'GPT-2 (2019)', 'GPT-3 (2020)', 'GPT-3.5 (2022)', 'GPT-4 (2023)', 'GPT-4o (2024)'],
+                    datasets: [{
+                        label: 'パラメータ数 (億)',
+                        data: [0.117, 1.5, 175, 175, 1760, 1800],
+                        backgroundColor: [
+                            'rgba(102, 126, 234, 0.8)',
+                            'rgba(118, 75, 162, 0.8)',
+                            'rgba(233, 69, 96, 0.8)',
+                            'rgba(240, 147, 251, 0.8)',
+                            'rgba(102, 126, 234, 0.9)',
+                            'rgba(233, 69, 96, 0.9)'
+                        ],
+                        borderColor: [
+                            'rgba(102, 126, 234, 1)',
+                            'rgba(118, 75, 162, 1)',
+                            'rgba(233, 69, 96, 1)',
+                            'rgba(240, 147, 251, 1)',
+                            'rgba(102, 126, 234, 1)',
+                            'rgba(233, 69, 96, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            type: 'logarithmic',
+                            ticks: {
+                                color: 'rgba(255,255,255,0.8)'
+                            },
+                            grid: {
+                                color: 'rgba(255,255,255,0.1)'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: 'rgba(255,255,255,0.8)'
+                            },
+                            grid: {
+                                color: 'rgba(255,255,255,0.1)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

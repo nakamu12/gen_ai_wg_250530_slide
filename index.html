@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <div class="progress-bar">
-        <div class="progress-fill" id="progress"></div>
-    </div>
 
     <div class="slide-container" id="slideContainer">
         <!-- Slide 1: Cover -->
@@ -54,7 +51,7 @@
                 <div class="company">ソフトバンク株式会社</div>
                 <div class="name">中村亮太</div>
             </div>
-            <div class="slide-number">1 / 17</div>
+            <div class="slide-number">1 / 16</div>
         </div>
 
         <!-- Slide 2: Agenda -->
@@ -69,7 +66,7 @@
                 <li>生成AIを使いこなすステップ</li>
                 <li>質疑応答 & エンゲージメント</li>
             </ul>
-            <div class="slide-number">2 / 17</div>
+            <div class="slide-number">2 / 16</div>
         </div>
 
         <!-- Slide 3: Definition -->
@@ -318,61 +315,104 @@
                     </p>
                 </div>
             </div>
-            <div class="slide-number">3 / 18</div>
+            <div class="slide-number">3 / 16</div>
         </div>
 
         <!-- Slide 4: Context Window -->
         <div class="slide" id="s04_context_window">
             <h2>コンテキストウィンドウ（入力トークン数）</h2>
             
-            <div style="display: flex; justify-content: space-between; margin: 40px 0;">
+            <div style="display: flex; justify-content: space-between; margin: 30px 0;">
                 <div style="flex: 1; margin-right: 30px;">
                     <h3 style="color: #667eea; margin-bottom: 25px;">💬 会話の記憶メカニズム</h3>
-                    <ul style="font-size: 1.2em;">
+                    <ul style="font-size: 1.3em;">
                         <li><strong>同じスレッド内</strong>の内容はコンテキストウィンドウが許す限り保持</li>
                         <li><strong>容量オーバー</strong>すると古い内容から順次削除</li>
                         <li><strong>Claude</strong>は全内容保持するが限界会話数が存在</li>
                     </ul>
+                    
+                    <div class="note" style="margin-top: 30px;">
+                        <h3 style="color: #764ba2; margin-bottom: 15px;">🔧 カスタムインストラクション</h3>
+                        <p style="font-size: 1.1em; margin-bottom: 10px;">
+                            <strong>全会話で利用できる共通プロンプト</strong> — 会話履歴が削除されてもカスタムインストラクションは保持される
+                        </p>
+                        <p style="font-size: 1em; color: rgba(255,255,255,0.8);">
+                            例：「敬語を使って回答」「専門用語は分かりやすく説明」などの指示を設定
+                        </p>
+                    </div>
                 </div>
                 
                 <div style="flex: 1; margin-left: 30px;">
-                    <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px;">
-                        <h3 style="color: #e94560; text-align: center; margin-bottom: 20px;">📊 主要ツールの容量</h3>
-                        <div style="display: flex; flex-direction: column; gap: 15px;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: rgba(102,126,234,0.2); border-radius: 8px;">
-                                <span style="font-weight: 600;">ChatGPT</span>
+                    <!-- GPT Context Window Evolution -->
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 25px; margin-bottom: 25px;">
+                        <h3 style="color: #e94560; text-align: center; margin-bottom: 20px;">📊 GPTシリーズの進化</h3>
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 15px; background: rgba(102,126,234,0.15); border-radius: 8px;">
+                                <span style="font-weight: 600;">GPT-3.5</span>
+                                <span style="color: #667eea;">4K トークン</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 15px; background: rgba(102,126,234,0.25); border-radius: 8px;">
+                                <span style="font-weight: 600;">GPT-4</span>
+                                <span style="color: #667eea;">8K トークン</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 15px; background: rgba(102,126,234,0.35); border-radius: 8px;">
+                                <span style="font-weight: 600;">GPT-4 Turbo</span>
                                 <span style="color: #667eea;">128K トークン</span>
                             </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: rgba(66,133,244,0.2); border-radius: 8px;">
-                                <span style="font-weight: 600;">Gemini</span>
-                                <span style="color: #4285F4;">1M トークン</span>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 15px; background: rgba(102,126,234,0.45); border-radius: 8px;">
+                                <span style="font-weight: 600;">GPT-4o</span>
+                                <span style="color: #667eea;">128K トークン</span>
                             </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: rgba(212,165,116,0.2); border-radius: 8px;">
-                                <span style="font-weight: 600;">Claude</span>
-                                <span style="color: #D4A574;">200K トークン</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Multimodal Evolution Timeline -->
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 25px;">
+                        <h3 style="color: #e94560; text-align: center; margin-bottom: 20px;">🎯 マルチモーダル進化</h3>
+                        <div style="position: relative;">
+                            <!-- Timeline line -->
+                            <div style="position: absolute; left: 20px; top: 20px; bottom: 20px; width: 2px; background: linear-gradient(to bottom, #667eea, #e94560); opacity: 0.6;"></div>
+                            
+                            <!-- Timeline items -->
+                            <div style="display: flex; flex-direction: column; gap: 15px;">
+                                <div style="display: flex; align-items: center; position: relative;">
+                                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #667eea; margin-right: 15px; position: relative; z-index: 1;"></div>
+                                    <div style="flex: 1; background: rgba(102,126,234,0.1); padding: 10px 15px; border-radius: 8px;">
+                                        <div style="font-weight: 600; font-size: 0.9em;">GPT-3.5 (2022)</div>
+                                        <div style="font-size: 0.8em; color: rgba(255,255,255,0.7);">テキストのみ</div>
+                                    </div>
+                                </div>
+                                
+                                <div style="display: flex; align-items: center; position: relative;">
+                                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #764ba2; margin-right: 15px; position: relative; z-index: 1;"></div>
+                                    <div style="flex: 1; background: rgba(118,75,162,0.15); padding: 10px 15px; border-radius: 8px;">
+                                        <div style="font-weight: 600; font-size: 0.9em;">GPT-4 (2023)</div>
+                                        <div style="font-size: 0.8em; color: rgba(255,255,255,0.7);">テキスト + 画像</div>
+                                    </div>
+                                </div>
+                                
+                                <div style="display: flex; align-items: center; position: relative;">
+                                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #e94560; margin-right: 15px; position: relative; z-index: 1;">
+                                        <div style="position: absolute; width: 20px; height: 20px; border-radius: 50%; background: rgba(233,69,96,0.3); top: -4px; left: -4px; animation: pulse 2s infinite;"></div>
+                                    </div>
+                                    <div style="flex: 1; background: rgba(233,69,96,0.15); padding: 10px 15px; border-radius: 8px;">
+                                        <div style="font-weight: 600; font-size: 0.9em;">GPT-4o (2024)</div>
+                                        <div style="font-size: 0.8em; color: rgba(255,255,255,0.7);">テキスト + 画像 + 音声</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="note" style="margin-top: 30px;">
-                <h3 style="color: #764ba2; margin-bottom: 15px;">🔧 カスタムインストラクション</h3>
-                <p style="font-size: 1.1em; margin-bottom: 10px;">
-                    <strong>全会話で利用できる共通プロンプト</strong> — 会話履歴が削除されてもカスタムインストラクションは保持される
-                </p>
-                <p style="font-size: 1em; color: rgba(255,255,255,0.8);">
-                    例：「敬語を使って回答」「専門用語は分かりやすく説明」などの指示を設定
-                </p>
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px; padding: 20px; background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(233,69,96,0.1)); border-radius: 15px;">
-                <p style="font-size: 1.3em; font-weight: 600;">
+            <div style="text-align: center; margin-top: 30px; padding: 20px; background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(233,69,96,0.1)); border-radius: 15px;">
+                <p style="font-size: 1.4em; font-weight: 600;">
                     💡 <span class="highlight">長い会話ほど文脈を理解</span>するが、容量制限に注意
                 </p>
             </div>
             
-            <div class="slide-number">4 / 18</div>
+            <div class="slide-number">4 / 16</div>
         </div>
 
         <!-- Slide 5: LLM -->
@@ -381,35 +421,101 @@
             <p style="font-size: 1.6em; text-align: center; margin-bottom: 40px;">
                 <span class="highlight">数億～数兆</span>パラメータを持つ汎用モデル
             </p>
-            <div class="param-visual">
-                <div class="param-bar">
-                    <div class="param-value">1.5B</div>
-                    <div class="param-label">GPT-2</div>
+            
+            <!-- Parameter Growth Chart -->
+            <div style="display: flex; justify-content: space-between; margin: 30px 0; align-items: flex-start;">
+                <!-- Left: Parameter Bar Chart -->
+                <div style="flex: 1; margin-right: 40px;">
+                    <h3 style="color: #667eea; text-align: center; margin-bottom: 25px; font-size: 1.4em;">パラメータ数の爆発的成長</h3>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="height: 45px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; position: relative; display: flex; align-items: center; padding: 0 15px; justify-content: space-between;">
+                            <span style="color: white; font-weight: 600; font-size: 1.1em;">GPT-1 (2018)</span>
+                            <span style="color: white; font-weight: 600; font-size: 1.1em;">0.117B</span>
+                        </div>
+                        <div style="height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; position: relative; display: flex; align-items: center; padding: 0 15px; justify-content: space-between;">
+                            <span style="color: white; font-weight: 600; font-size: 1.1em;">GPT-2 (2019)</span>
+                            <span style="color: white; font-weight: 600; font-size: 1.1em;">1.5B</span>
+                        </div>
+                        <div style="height: 55px; background: linear-gradient(135deg, #764ba2 0%, #e94560 100%); border-radius: 8px; position: relative; display: flex; align-items: center; padding: 0 15px; justify-content: space-between;">
+                            <span style="color: white; font-weight: 600; font-size: 1.1em;">GPT-3 (2020)</span>
+                            <span style="color: white; font-weight: 600; font-size: 1.1em;">175B</span>
+                        </div>
+                        <div style="height: 55px; background: linear-gradient(135deg, #764ba2 0%, #e94560 100%); border-radius: 8px; position: relative; display: flex; align-items: center; padding: 0 15px; justify-content: space-between;">
+                            <span style="color: white; font-weight: 600; font-size: 1.1em;">GPT-3.5 (2022)</span>
+                            <span style="color: white; font-weight: 600; font-size: 1.1em;">175B</span>
+                        </div>
+                        <div style="height: 60px; background: linear-gradient(135deg, #e94560 0%, #f093fb 100%); border-radius: 8px; position: relative; display: flex; align-items: center; padding: 0 15px; justify-content: space-between; box-shadow: 0 4px 15px rgba(233,69,96,0.4);">
+                            <span style="color: white; font-weight: 600; font-size: 1.1em;">GPT-4 (2023)</span>
+                            <span style="color: white; font-weight: 600; font-size: 1.1em;">1.76T</span>
+                        </div>
+                        <div style="height: 60px; background: linear-gradient(135deg, #e94560 0%, #f093fb 50%, #667eea 100%); border-radius: 8px; position: relative; display: flex; align-items: center; padding: 0 15px; justify-content: space-between; box-shadow: 0 4px 15px rgba(233,69,96,0.6);">
+                            <span style="color: white; font-weight: 600; font-size: 1.1em;">GPT-4o (2024)</span>
+                            <span style="color: white; font-weight: 600; font-size: 1.1em;">200B〜1.8T</span>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 20px; font-size: 1.2em; color: rgba(255,255,255,0.9);">
+                        <strong>約15,000倍の成長</strong> (GPT-1 → GPT-4)
+                    </div>
                 </div>
-                <div class="param-bar">
-                    <div class="param-value">175B</div>
-                    <div class="param-label">GPT-3</div>
-                </div>
-                <div class="param-bar">
-                    <div class="param-value">1.76T</div>
-                    <div class="param-label">GPT-4</div>
-                </div>
-                <div class="param-bar">
-                    <div class="param-value">1.8T</div>
-                    <div class="param-label">Gemini</div>
+                
+                <!-- Right: Multimodal Evolution Timeline -->
+                <div style="flex: 1; margin-left: 40px;">
+                    <h3 style="color: #e94560; text-align: center; margin-bottom: 25px; font-size: 1.4em;">マルチモーダル進化の軌跡</h3>
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 30px; position: relative;">
+                        <!-- Timeline line -->
+                        <div style="position: absolute; left: 25px; top: 50px; bottom: 50px; width: 3px; background: linear-gradient(to bottom, #667eea 0%, #764ba2 50%, #e94560 100%); border-radius: 2px;"></div>
+                        
+                        <!-- Timeline items -->
+                        <div style="display: flex; flex-direction: column; gap: 30px; position: relative;">
+                            <!-- Text Era -->
+                            <div style="display: flex; align-items: center; position: relative;">
+                                <div style="width: 16px; height: 16px; border-radius: 50%; background: #667eea; margin-right: 20px; position: relative; z-index: 1; box-shadow: 0 0 10px rgba(102,126,234,0.5);"></div>
+                                <div style="flex: 1; background: rgba(102,126,234,0.15); padding: 20px; border-radius: 10px;">
+                                    <div style="font-weight: 700; color: #667eea; margin-bottom: 8px; font-size: 1.2em;">テキスト専用時代</div>
+                                    <div style="font-size: 1em; color: rgba(255,255,255,0.8); margin-bottom: 10px;">2018-2022</div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <span style="font-size: 1.8em;">📝</span>
+                                        <span style="font-size: 1em; color: rgba(255,255,255,0.9);">GPT-1 〜 GPT-3.5</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Vision Era -->
+                            <div style="display: flex; align-items: center; position: relative;">
+                                <div style="width: 16px; height: 16px; border-radius: 50%; background: #764ba2; margin-right: 20px; position: relative; z-index: 1; box-shadow: 0 0 10px rgba(118,75,162,0.5);"></div>
+                                <div style="flex: 1; background: rgba(118,75,162,0.15); padding: 20px; border-radius: 10px;">
+                                    <div style="font-weight: 700; color: #764ba2; margin-bottom: 8px; font-size: 1.2em;">視覚覚醒</div>
+                                    <div style="font-size: 1em; color: rgba(255,255,255,0.8); margin-bottom: 10px;">2023年3月</div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <span style="font-size: 1.6em;">📝</span>
+                                        <span style="font-size: 1.6em;">🖼️</span>
+                                        <span style="font-size: 1em; color: rgba(255,255,255,0.9);">GPT-4</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Omni Era -->
+                            <div style="display: flex; align-items: center; position: relative;">
+                                <div style="width: 16px; height: 16px; border-radius: 50%; background: #e94560; margin-right: 20px; position: relative; z-index: 1; box-shadow: 0 0 15px rgba(233,69,96,0.7);">
+                                    <div style="position: absolute; width: 32px; height: 32px; border-radius: 50%; background: rgba(233,69,96,0.3); top: -8px; left: -8px; animation: pulse 2s infinite;"></div>
+                                </div>
+                                <div style="flex: 1; background: rgba(233,69,96,0.15); padding: 20px; border-radius: 10px; border: 1px solid rgba(233,69,96,0.3);">
+                                    <div style="font-weight: 700; color: #e94560; margin-bottom: 8px; font-size: 1.2em;">全感覚統合時代</div>
+                                    <div style="font-size: 1em; color: rgba(255,255,255,0.8); margin-bottom: 10px;">2024年5月</div>
+                                    <div style="display: flex; align-items: center; gap: 8px;">
+                                        <span style="font-size: 1.4em;">📝</span>
+                                        <span style="font-size: 1.4em;">🖼️</span>
+                                        <span style="font-size: 1.4em;">🎵</span>
+                                        <span style="font-size: 1em; font-weight: 600; color: rgba(255,255,255,0.9);">GPT-4o</span>
+                                    </div>
+                                    <div style="font-size: 0.9em; color: #e94560; margin-top: 8px; font-weight: 600;">平均応答時間: 320ms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div style="display: flex; justify-content: space-around; margin-top: 60px;">
-                <div style="text-align: center; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 15px; flex: 1; margin: 0 10px;">
-                    <h3 style="color: #667eea; font-size: 1.3em;">多様なタスク</h3>
-                    <p>1モデルで処理</p>
-                </div>
-                <div style="text-align: center; padding: 20px; background: rgba(233, 69, 96, 0.1); border-radius: 15px; flex: 1; margin: 0 10px;">
-                    <h3 style="color: #e94560; font-size: 1.3em;">性能向上</h3>
-                    <p>RLHF/微調整</p>
-                </div>
-            </div>
-            <div class="slide-number">4 / 17</div>
+            <div class="slide-number">5 / 16</div>
         </div>
 
         <!-- Slide 5: Strengths/Weaknesses -->
@@ -442,7 +548,7 @@
             <div class="note" style="margin-top: 40px; font-size: 1.2em;">
                 <strong>注意：</strong> ハルシネーション（誤情報生成）対策として人間のチェックが必須
             </div>
-            <div class="slide-number">5 / 17</div>
+            <div class="slide-number">6 / 16</div>
         </div>
 
         <!-- Slide 6: Tools Overview -->
@@ -476,7 +582,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="slide-number">6 / 17</div>
+            <div class="slide-number">7 / 16</div>
         </div>
 
         <!-- Slide 7: ChatGPT -->
@@ -515,7 +621,7 @@
                     </div>
                 </div>
             </div>
-            <div class="slide-number">7 / 17</div>
+            <div class="slide-number">8 / 16</div>
         </div>
 
         <!-- Slide 8: Gemini -->
@@ -563,7 +669,7 @@
                     </div>
                 </div>
             </div>
-            <div class="slide-number">8 / 17</div>
+            <div class="slide-number">9 / 16</div>
         </div>
 
         <!-- Slide 9: Claude -->
@@ -610,57 +716,12 @@
                     </div>
                 </div>
             </div>
-            <div class="slide-number">9 / 17</div>
+            <div class="slide-number">10 / 16</div>
         </div>
 
-        <!-- Slide 10: Bolt -->
-        <div class="slide" id="s11_bolt">
-            <h2>Bolt</h2>
-            <div class="tool-grid">
-                <div style="flex: 1;">
-                    <div style="text-align: center; margin-bottom: 30px;">
-                        <svg width="100" height="100" viewBox="0 0 100 100">
-                            <rect width="100" height="100" rx="20" fill="url(#bolt-gradient)"/>
-                            <defs>
-                                <linearGradient id="bolt-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#FFC107;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <path d="M 35 20 L 25 50 L 40 50 L 30 80 L 70 40 L 50 40 L 65 20 Z" fill="white"/>
-                        </svg>
-                    </div>
-                    <ul style="font-size: 1.3em;">
-                        <li>自然言語→数分でWebアプリ完成</li>
-                        <li>ノーコード × 高速プロトタイピング</li>
-                        <li>フルスタック開発をAIが代行</li>
-                    </ul>
-                </div>
-                <div style="flex: 1;">
-                    <div class="timeline" style="margin-top: 30px;">
-                        <div class="timeline-item">
-                            <div style="font-size: 1.5em;">💬</div>
-                            <p style="margin: 10px 0;">要件入力</p>
-                            <p style="font-size: 0.9em; color: rgba(255,255,255,0.6);">30秒</p>
-                        </div>
-                        <div class="timeline-item">
-                            <div style="font-size: 1.5em;">⚡</div>
-                            <p style="margin: 10px 0;">自動生成</p>
-                            <p style="font-size: 0.9em; color: rgba(255,255,255,0.6);">2分</p>
-                        </div>
-                        <div class="timeline-item">
-                            <div style="font-size: 1.5em;">🚀</div>
-                            <p style="margin: 10px 0;">デプロイ</p>
-                            <p style="font-size: 0.9em; color: rgba(255,255,255,0.6);">即時</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slide-number">10 / 17</div>
-        </div>
 
         <!-- Slide 11: Dify -->
-        <div class="slide" id="s12_dify">
+        <div class="slide" id="s11_dify">
             <h2>Dify - AIアプリケーション開発プラットフォーム</h2>
             <div class="tool-grid">
                 <div style="flex: 1;">
@@ -703,25 +764,12 @@
                     </div>
                 </div>
             </div>
-            <div class="slide-number">11 / 17</div>
+            <div class="slide-number">11 / 16</div>
         </div>
 
-        <!-- Slide 12: Changes -->
-        <div class="slide" id="s13_change_3years">
-            <h2>過去2〜3年の進化：パラメータ数の爆発的成長</h2>
-            <div class="chart-container">
-                <canvas id="growthChart"></canvas>
-            </div>
-            <div style="text-align: center; margin-top: 30px;">
-                <p style="font-size: 1.3em; color: rgba(255,255,255,0.9);">
-                    <span class="highlight">1000倍以上</span>の成長を達成（GPT-2→GPT-4）
-                </p>
-            </div>
-            <div class="slide-number">12 / 17</div>
-        </div>
 
         <!-- Slide 13: Research -->
-        <div class="slide" id="s14_research">
+        <div class="slide" id="s12_research">
             <h2>AI 2027：AGI到達予測</h2>
             <div class="paper-content">
                 <div class="paper-title">AI 2027 - 元OpenAI研究者らによる予測</div>
@@ -735,11 +783,11 @@
             <div class="note" style="margin-top: 30px;">
                 <strong>重要：</strong> この予測は楽観的シナリオ。データ枯渇、計算資源の限界、規制強化などにより、実際のタイムラインは大きく遅れる可能性がある
             </div>
-            <div class="slide-number">13 / 17</div>
+            <div class="slide-number">13 / 16</div>
         </div>
 
         <!-- Slide 14: Catchup -->
-        <div class="slide" id="s15_catchup">
+        <div class="slide" id="s13_catchup">
             <h2>キャッチアップ方法</h2>
             <ul>
                 <li>公式ブログ（OpenAI・Google AI など）</li>
@@ -750,11 +798,11 @@
             <div class="note">
                 進化速度が速い → 情報習慣化が鍵
             </div>
-            <div class="slide-number">14 / 17</div>
+            <div class="slide-number">14 / 16</div>
         </div>
 
         <!-- Slide 15: Steps -->
-        <div class="slide" id="s16_mastery_steps">
+        <div class="slide" id="s14_mastery_steps">
             <h2>生成AIを業務に組み込むステップ</h2>
             <ul class="numbered-list">
                 <li><strong>体験フェーズ：</strong> まずは個人でChatGPTやClaudeを使ってみる</li>
@@ -766,11 +814,11 @@
             <div class="note" style="margin-top: 40px; font-size: 1.2em;">
                 <strong>今回の目標：</strong> 参加者全員が「試行フェーズ」に入り、実際の業務で生成AIを活用できるようになること
             </div>
-            <div class="slide-number">15 / 17</div>
+            <div class="slide-number">15 / 16</div>
         </div>
 
         <!-- Slide 16: Summary -->
-        <div class="slide" id="s17_key_takeaway">
+        <div class="slide" id="s15_key_takeaway">
             <h2 style="text-align: center; margin-bottom: 50px;">まとめとキーテイクアウェイ</h2>
             <div class="summary-content">
                 <div class="summary-points">
@@ -790,11 +838,11 @@
                     </h3>
                 </div>
             </div>
-            <div class="slide-number">16 / 17</div>
+            <div class="slide-number">15 / 16</div>
         </div>
 
         <!-- Slide 17: Questions -->
-        <div class="slide" id="s18_question">
+        <div class="slide" id="s16_question">
             <div class="impact-container">
                 <h2 style="margin-bottom: 40px;">質問・エンゲージメント</h2>
                 <div class="impact-message">
@@ -826,7 +874,7 @@
                 <div id="confetti" class="confetti"></div>
                 <div id="fireworks"></div>
             </div>
-            <div class="slide-number">17 / 17</div>
+            <div class="slide-number">15 / 16</div>
         </div>
     </div>
 

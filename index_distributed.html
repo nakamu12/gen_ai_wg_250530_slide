@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成AIが変える未来 - 2025</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .navigation {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0,0,0,0.7);
+            padding: 10px;
+            border-radius: 10px;
+            z-index: 1000;
+        }
+        .navigation select {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .slide-frame {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <select id="slideSelector" onchange="navigateToSlide()">
+            <option value="pages/01_cover.html">1. カバー</option>
+            <option value="pages/02_agenda.html">2. アジェンダ</option>
+            <option value="pages/03_genai_definition.html">3. 生成AIとは</option>
+            <option value="pages/04_llm.html">4. LLM</option>
+            <option value="pages/05_context_window.html">5. コンテキストウィンドウ</option>
+            <option value="pages/06_strength_weak.html">6. 得意・苦手</option>
+            <option value="pages/07_tools_overview.html">7. ツール比較</option>
+            <option value="pages/08_chatgpt.html">8. ChatGPT</option>
+            <option value="pages/09_gemini.html">9. Gemini</option>
+            <option value="pages/10_claude.html">10. Claude</option>
+            <option value="pages/11_dify.html">11. Dify</option>
+            <option value="pages/12_research.html">12. AGI予測</option>
+            <option value="pages/13_catchup.html">13. キャッチアップ</option>
+            <option value="pages/14_mastery_steps.html">14. 活用ステップ</option>
+            <option value="pages/15_key_takeaway.html">15. まとめ</option>
+            <option value="pages/16_question.html">16. 質疑応答</option>
+        </select>
+        <button onclick="previousSlide()">◀ 前へ</button>
+        <button onclick="nextSlide()">次へ ▶</button>
+        <button onclick="toggleFullscreen()">フルスクリーン</button>
+    </div>
+
+    <iframe id="slideFrame" class="slide-frame" src="pages/01_cover.html"></iframe>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = [
+            'pages/01_cover.html',
+            'pages/02_agenda.html',
+            'pages/03_genai_definition.html',
+            'pages/04_llm.html',
+            'pages/05_context_window.html',
+            'pages/06_strength_weak.html',
+            'pages/07_tools_overview.html',
+            'pages/08_chatgpt.html',
+            'pages/09_gemini.html',
+            'pages/10_claude.html',
+            'pages/11_dify.html',
+            'pages/12_research.html',
+            'pages/13_catchup.html',
+            'pages/14_mastery_steps.html',
+            'pages/15_key_takeaway.html',
+            'pages/16_question.html'
+        ];
+
+        function navigateToSlide() {
+            const selector = document.getElementById('slideSelector');
+            const selectedSlide = selector.value;
+            document.getElementById('slideFrame').src = selectedSlide;
+            currentSlideIndex = slides.indexOf(selectedSlide);
+        }
+
+        function nextSlide() {
+            if (currentSlideIndex < slides.length - 1) {
+                currentSlideIndex++;
+                updateSlide();
+            }
+        }
+
+        function previousSlide() {
+            if (currentSlideIndex > 0) {
+                currentSlideIndex--;
+                updateSlide();
+            }
+        }
+
+        function updateSlide() {
+            const slideFrame = document.getElementById('slideFrame');
+            const slideSelector = document.getElementById('slideSelector');
+            
+            slideFrame.src = slides[currentSlideIndex];
+            slideSelector.selectedIndex = currentSlideIndex;
+        }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // キーボードナビゲーション
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowRight' || event.key === ' ') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                previousSlide();
+            } else if (event.key === 'Escape') {
+                if (document.fullscreenElement) {
+                    document.exitFullscreen();
+                }
+            }
+        });
+
+        // 初期状態の設定
+        document.addEventListener('DOMContentLoaded', function() {
+            updateSlide();
+        });
+    </script>
+</body>
+</html>

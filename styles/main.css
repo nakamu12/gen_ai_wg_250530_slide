@@ -288,22 +288,6 @@ button:hover {
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
-.progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.1);
-    z-index: 100;
-}
-
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-    transition: width 0.3s ease-out;
-    box-shadow: 0 0 10px rgba(102, 126, 234, 0.8);
-}
 
 .slide-number {
     position: absolute;
@@ -571,10 +555,12 @@ button:hover {
     animation: growBar 1s ease-out forwards;
 }
 
-.param-bar:nth-child(1) { height: 30%; animation-delay: 0.2s; }
-.param-bar:nth-child(2) { height: 60%; animation-delay: 0.4s; }
-.param-bar:nth-child(3) { height: 90%; animation-delay: 0.6s; }
-.param-bar:nth-child(4) { height: 100%; animation-delay: 0.8s; }
+.param-bar:nth-child(1) { height: 20%; animation-delay: 0.2s; }
+.param-bar:nth-child(2) { height: 25%; animation-delay: 0.4s; }
+.param-bar:nth-child(3) { height: 60%; animation-delay: 0.6s; }
+.param-bar:nth-child(4) { height: 70%; animation-delay: 0.8s; }
+.param-bar:nth-child(5) { height: 95%; animation-delay: 1.0s; }
+.param-bar:nth-child(6) { height: 100%; animation-delay: 1.2s; }
 
 @keyframes growBar {
     from {

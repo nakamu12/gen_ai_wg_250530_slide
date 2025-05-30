@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成AIが変える未来 - 質疑応答</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1em;
+            color: rgba(255,255,255,0.6);
+        }
+        .reveal-content {
+            display: none;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="impact-container">
+            <h2 style="margin-bottom: 40px;">質問・エンゲージメント</h2>
+            <div class="impact-message">
+                このプレゼンテーションは<br>
+                生成AIで作りましたが、気づきましたか？
+            </div>
+            <div class="reveal-container">
+                <button class="reveal-button" onclick="revealSecret()">
+                    答えを見る
+                </button>
+                <div class="reveal-content" id="revealContent">
+                    <div class="final-message">
+                        <h3 style="font-size: 2em; margin-bottom: 20px; color: #fff;">
+                            実はこのプレゼンテーション全体が
+                        </h3>
+                        <p style="font-size: 3em; margin: 20px 0; font-weight: bold; background: linear-gradient(135deg, #667eea 0%, #e94560 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                            Claude（生成AI）
+                        </p>
+                        <p style="font-size: 1.8em; margin-top: 20px;">
+                            によって作成されました！
+                        </p>
+                        <div style="margin-top: 40px; font-size: 1.3em; color: rgba(255,255,255,0.8);">
+                            <p>デザイン・構成・グラフ・アニメーション</p>
+                            <p style="font-weight: 600; color: #e94560;">すべてAIが生成</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="confetti" class="confetti"></div>
+            <div id="fireworks"></div>
+        </div>
+        <div class="slide-number">16 / 16</div>
+    </div>
+
+    <script>
+        function revealSecret() {
+            const revealContent = document.getElementById('revealContent');
+            const confetti = document.getElementById('confetti');
+            const fireworks = document.getElementById('fireworks');
+            
+            if (revealContent) {
+                revealContent.style.display = 'block';
+                revealContent.style.animation = 'slideDown 0.5s ease-out';
+            }
+            
+            // Create confetti effect
+            createConfetti();
+            
+            // Create fireworks effect
+            createFireworks();
+        }
+        
+        function createConfetti() {
+            const confettiContainer = document.getElementById('confetti');
+            if (!confettiContainer) return;
+            
+            for (let i = 0; i < 50; i++) {
+                const confettiPiece = document.createElement('div');
+                confettiPiece.style.position = 'absolute';
+                confettiPiece.style.width = '10px';
+                confettiPiece.style.height = '10px';
+                confettiPiece.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                confettiPiece.style.left = Math.random() * 100 + 'vw';
+                confettiPiece.style.top = '-10px';
+                confettiPiece.style.borderRadius = '50%';
+                confettiPiece.style.animation = `confetti-fall ${Math.random() * 3 + 2}s linear infinite`;
+                confettiContainer.appendChild(confettiPiece);
+                
+                setTimeout(() => {
+                    confettiPiece.remove();
+                }, 5000);
+            }
+        }
+        
+        function createFireworks() {
+            console.log('Fireworks created!');
+        }
+        
+        // Add CSS animation for confetti
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes confetti-fall {
+                0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+                100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
